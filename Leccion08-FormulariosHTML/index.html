@@ -8,7 +8,15 @@
 </head>
 <body>
     <h1>Formularios en HTML</h1>
-    <form method="post">
+    <form action="mi_servidor" autocomplete="off">
+        <fieldset>
+            <legend>Datos Persona:</legend>
+
+            <label for="idPersona">Id Persona:</label><br/>
+            <input type="text" id="idPersona" name="idPersona" readonly="true" value="100" disabled="true"/><br/>
+
+            <input type="hidden" name="sistema" id="sistema" value="SAP"/>
+
         <label for="nombre">Nombre:</label><br/>
         <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required="true"/><br/>
 
@@ -30,7 +38,30 @@
         <input type="radio" name="genero" id="masculino" value="masculino"/>
         <label for="masculino">Masculino</label><br/>
 
-        <input type="submit" value="Enviar"><br/>
+        <label">Música Favorita</label><br/>
+        <input type="checkbox" name="musica" id="clasica" value="clasica"/>
+        <label for="clasica">Clasica</label><br/>
+        <input type="checkbox" name="musica" id="jazz" value="jazz"/>
+        <label for="jazz">Jazz</label><br/>
+
+        <label for="autos">Marca auto favorita: </label><br/>
+        <select name="autos" id="autos">
+            <option value="volvo">Volvo</option>
+            <option value="seat">Seat</option>
+            <option value="bmw">Bmw</option>
+            <option value="audi" selected="true">Audi</option>
+        </select><br/>
+
+        <label for="comentario">Comentario</label><br/>
+        <textarea name="comentario" id="comentario" cols="30" rows="2">Este es mi comentario</textarea>
+
+        <br/>
+        <input type="submit" value="Enviar">
+        <input type="submit" formnovalidate="formnovalidate" value="Enviar sin validar"/>
+        <input type="reset"  value="Restablecer"><br/>
+        <br/>
+        <a href="/formulario.html">Enlace a una página login de ejemplo</a>
+    </fieldset>
     </form>
 </body>
 </html>
